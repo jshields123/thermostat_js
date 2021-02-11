@@ -9,7 +9,11 @@ describe('Thermostat', function(){
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
-  it('can increase temp by 20 with up button', function(){
-    expect(thermostat.increaseTemp()).toEqual(40);
+  it('can increase temp by 1 with up', function(){
+    expect(thermostat.up()).toEqual(21);
   });
+
+  it('can decrease temp by 1 with down', function(){
+    expect(thermostat.down()).toEqual(19);
+  })
 });
