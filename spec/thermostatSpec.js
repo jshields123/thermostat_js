@@ -69,4 +69,29 @@ describe('when power saving is on', function(){
   });
 
 });
+
+  describe('levels of usage', function(){
+    describe('when the temperature is below 18 degrees', function(){
+      it('it is considered low usage', function(){
+        for (var i = 0; i < 3; i++) {
+          thermostat.down();
+        }
+        expect(thermostat.energyUsage()).toEqual('low-usage');
+      });
+    });
+    describe('when the temperature is between 18 and 25 degrees', function(){
+      it('it is considered medium-usage', function(){
+        expect(thermostat.energyUsage()).toEqual('medium-usage');
+      });
+    });
+    describe('when the temperature is anything else', function(){
+      it('it is considered high-usage', function(){
+        thermostat.POWER_SAVING = false;
+        for (var i = 0; i < 6; i++) {
+          thermostat.up();
+        }
+        expect(thermostat.energyUsage()).toEqual('high-usage');
+      });
+    });
+  });
 });
