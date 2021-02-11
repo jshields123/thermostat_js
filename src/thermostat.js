@@ -5,6 +5,8 @@ class Thermostat {
   constructor() {
     this.temperature = 20;
     this.MINIMUM_TEMPERATURE = 10;
+    this.POWER_SAVING = false;
+    this.MAXIMUM_TEMPERATURE = 25
   }
 
   getCurrentTemperature(){
@@ -12,7 +14,10 @@ class Thermostat {
   }
 
   up(){
-    return this.temperature += 1;
+    if (this.isMaximumTemperature()){
+      return;
+    }
+     this.temperature += 1;
   }
 
   down(){
@@ -26,4 +31,15 @@ class Thermostat {
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
+  turnOnPowerSaving(){
+    this.POWER_SAVING = true
+  }
+
+  isPowerSaving(){
+    return this.POWER_SAVING === true
+  }
+
+  isMaximumTemperature(){
+    return this.temperature === this.MAXIMUM_TEMPERATURE;
+  }
 };
