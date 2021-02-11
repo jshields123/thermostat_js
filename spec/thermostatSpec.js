@@ -26,17 +26,39 @@ describe('Thermostat', function(){
     }
     expect(thermostat.getCurrentTemperature()).toEqual(10);
   });
-  it('has power saving mode that can be on or off', function(){
+
+  it('has power saving mode that can be on', function(){
     thermostat.turnOnPowerSaving()
-    expect(thermostat.isPowerSaving()).toBe(true);
+    expect(thermostat.isPowerSavingOn()).toBe(true);
   });
 
-  it('maximum temperature is when power saving is 25', function(){
-    for(var i = 0; i < 25; i ++) {
-      thermostat.up();
-      }
-      thermostat.turnOnPowerSaving();
-      expect(thermostat.getCurrentTemperature()).toEqual(25);
+  it('power saving can be turned off', function(){
+    thermostat.turnOffPowerSaving()
+    expect(thermostat.isPowerSavingOn()).toBe(false);
   })
 
+it('it can be switched back on', function(){
+  thermostat.turnOffPowerSaving()
+  expect(thermostat.isPowerSavingOn()).toBe(false);
+  thermostat.turnOnPowerSaving()
+  expect(thermostat.isPowerSavingOn()).toBe(true);
+});
+
+describe('when power saving is on', function(){
+  it('maximum temperature is 25 when power saving is on', function(){
+    for (var i = 0; i < 5; i ++) {
+      thermostat.up();
+      }
+      expect(thermostat.getCurrentTemperature()).toEqual(25);
+    });
+
+  it('maximum temperature is 32 when power saving is off', function(){
+    for(var i = 0; i < 13; i ++) {
+      thermostat.up();
+    }
+
+    expect(thermostat.getCurrentTemperature()).toEqual(32);
+  });
+
+});
 });
