@@ -44,6 +44,14 @@ it('it can be switched back on', function(){
   expect(thermostat.isPowerSavingOn()).toBe(true);
 });
 
+it('it can be reset to 20 degrees', function(){
+  for (var i = 0; i < 5; i ++ ) {
+    thermostat.up();
+  }
+  thermostat.resetTemp();
+  expect(thermostat.getCurrentTemperature()).toEqual(20)
+});
+
 describe('when power saving is on', function(){
   it('maximum temperature is 25 when power saving is on', function(){
     for (var i = 0; i < 5; i ++) {
@@ -53,7 +61,7 @@ describe('when power saving is on', function(){
     });
 
   it('maximum temperature is 32 when power saving is off', function(){
-    for(var i = 0; i < 13; i ++) {
+    for (var i = 0; i < 13; i ++) {
       thermostat.up();
     }
 

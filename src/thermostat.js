@@ -3,10 +3,10 @@
 class Thermostat {
 
   constructor() {
-    this.temperature = 20;
+    this.DEFAULT_TEMPERATURE = 20;
+    this.temperature = this.DEFAULT_TEMPERATURE;
     this.MINIMUM_TEMPERATURE = 10;
     this.POWER_SAVING = false;
-    // this.MAXIMUM_TEMPERATURE = 25
     this.MAX_LIMIT_POWER_SAVING_OFF = 32;
     this.MAX_LIMIT_POWER_SAVING_ON = 25
   }
@@ -41,14 +41,18 @@ class Thermostat {
   }
 
   isPowerSavingOn(){
-    return this.POWER_SAVING === true
+    return this.POWER_SAVING === true;
   }
 
   turnOffPowerSaving(){
-    this.POWER_SAVING = false
+    this.POWER_SAVING = false;
   }
 
   turnOnPowerSaving(){
-    this.POWER_SAVING = true
+    this.POWER_SAVING = true;
+  }
+
+  resetTemp(){
+    this.temperature = 20;
   }
 };
