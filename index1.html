@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="./style.css" >
+  <title>My Thermostat</title>
+</head>
+
+<body>
+  <section>
+    <h1 id='temperature'></h1>
+
+      <button id='temperature-up'>+</button>
+      <button id='temperature-down'>-</button>
+      <button id='temperature-reset'>reset</button>
+      <br>
+      Power saving mode is <span id='power-saving-status'>on</span>
+      <br>
+      <br>
+
+        <label class="switch">
+        <input type="checkbox" id="togBtn">
+        <div class="slider round"></div>
+        <br>
+
+
+        <span id="powersaving-on">ON</span>
+        <span id="powersaving-off">OFF</span>
+        <br>
+      </label>
+
+
+  </section>
+
+  <script src="jquery.js"></script>
+  <script src='interface.js'></script>
+
+<script src="src/thermostat.js"></script>
+</body>
+</html>
