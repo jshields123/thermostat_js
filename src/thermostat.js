@@ -11,58 +11,58 @@ class Thermostat {
     this.MAX_LIMIT_POWER_SAVING_ON = 25
   }
 
-  getCurrentTemperature(){
+  getCurrentTemperature() {
     return this.temperature;
   }
 
-  up(){
-    if (this.isMaximumTemperature()){
+  up() {
+    if (this.isMaximumTemperature()) {
       return;
     }
-     this.temperature += 1;
+    this.temperature += 1;
   }
 
-  down(){
-    if (this.isMinimumTemperature()){
+  down() {
+    if (this.isMinimumTemperature()) {
       return;
     }
     this.temperature -= 1;
   }
 
-  isMinimumTemperature(){
+  isMinimumTemperature() {
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
-  isMaximumTemperature(){
-    if(this.isPowerSavingOn() === false) {
+  isMaximumTemperature() {
+    if (this.isPowerSavingOn() === true) {
       return this.temperature === this.MAX_LIMIT_POWER_SAVING_OFF;
     }
     return this.temperature === this.MAX_LIMIT_POWER_SAVING_ON;
   }
 
-  isPowerSavingOn(){
+  isPowerSavingOn() {
     return this.POWER_SAVING === true;
   }
 
-  turnOffPowerSaving(){
+  turnOffPowerSaving() {
     this.POWER_SAVING = false;
   }
 
-  turnOnPowerSaving(){
+  turnOnPowerSaving() {
     this.POWER_SAVING = true;
   }
 
-  resetTemp(){
+  resetTemp() {
     this.temperature = 20;
   }
 
-  energyUsage(){
-    if(this.temperature < 18) {
+  energyUsage() {
+    if (this.temperature < 18) {
       return 'low-usage'
     } else if (this.temperature > 18 && this.temperature < 25) {
-        return 'medium-usage'
+      return 'medium-usage'
     } else {
-        return 'high-usage'
+      return 'high-usage'
     }
 
   }
