@@ -6,7 +6,7 @@ class Thermostat {
     this.DEFAULT_TEMPERATURE = 20;
     this.temperature = this.DEFAULT_TEMPERATURE;
     this.MINIMUM_TEMPERATURE = 10;
-    this.POWER_SAVING = false;
+    this.POWER_SAVING = true;
     this.MAX_LIMIT_POWER_SAVING_OFF = 32;
     this.MAX_LIMIT_POWER_SAVING_ON = 25
   }
