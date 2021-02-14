@@ -2,18 +2,18 @@ $(document).ready(function () {
   displayWeather('London');
   let thermostat = new Thermostat();
   updateTemperature();
-  // $('#temperature').text(thermostat.getCurrentTemperature());
+
 
   $('#temperature-up').on('click', function () {
     thermostat.up();
     updateTemperature();
-    // $('#temperature').text(thermostat.getCurrentTemperature());
+
 
   })
   $('#temperature-down').click(function () {
     thermostat.down();
     updateTemperature();
-    // $('#temperature').text(thermostat.getCurrentTemperature());
+
   })
 
   $('#temperature-reset').click(function () {
@@ -52,5 +52,7 @@ $(document).ready(function () {
     $('#temperature').text(thermostat.temperature);
     $('#energy-usage-status').attr('class', thermostat.energyUsage());
     $('#energy-usage-status').text(thermostat.energyUsage());
-  }
+}
+
+
 })

@@ -5,39 +5,65 @@
   <meta charset="UTF-8">
 
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
   <title>My Thermostat</title>
 </head>
 
 <body>
-  <section>
-    <h1 id='temperature'></h1>
-    <h1> Current temperature: <span id="current-temperature"></span></h1>
-    <section>
-      <!-- <h1>Current temperature: <span id="current-temperature">20</span></h1> -->
-      <form id="select-city">
-        <input id="current-city" type="text" placeholder="Enter a city"></input>
-        <input type="submit"></input>
-      </form>
+  <main>
+    <section class='landing'>
+      <div class='main-bit'>
+      <h1 class='big-text'>My Thermostat</h1>
+
+      <br>
+      <section>
+        <label for="city-selector">Check a city temperature. Go on </label>
+        <form id="select-city">
+          <input id="current-city" type="text" placeholder="Enter a city"></input>
+          <input type="submit"></input>
+        </form>
+      </section>
+      <h1> Current temperature: <span id="current-temperature"></span></h1>
+      <br>
+      <label for="temperature inside">Temperature inside:<h1 id='temperature'></h1></label>
+      <button id='temperature-up'>+</button>
+      <button id='temperature-down'>-</button>
+      <button id='temperature-reset'>reset</button>
+      <br>
+      Power saving mode is <span id='power-saving-status'>on</span>
+      <br>
+      Power usage is <span id='energy-usage-status'>medium</span>
+      <br>
+      <button id="powersaving-on">PSM on</button>
+      <button id="powersaving-off">PSM off</button>
+
+      </label>
+    </div>
+
     </section>
-    <button id='temperature-up'>+</button>
-    <button id='temperature-down'>-</button>
-    <button id='temperature-reset'>reset</button>
-    <br>
-    Power saving mode is <span id='power-saving-status'>on</span>
-    <br>
-    Power usage is <span id='energy-usage-status'>medium</span>
-    <br>
-    <button id="powersaving-on">PSM on</button>
-    <button id="powersaving-off">PSM off</button>
-
-    </label>
-
+  </main>
+  <div class='intro'>
+    <div class='intro-text'>
+      <h1 class='hide'>
+        <span class='text'>Control your temperature.</span>
+      </h1>
+      <h1 class='hide'>
+        <span class='text'>Check your cities temperature.</span>
+      </h1>
+      <h1 class='hide'>
+        <span class='text'>Endless fun.</span>
+      </h1>
+    </div>
+  </div
+  <div class="slider"></div>
+  <section>
 
   </section>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
   <script src="jquery.js"></script>
-  <script src='interface.js'></script>
-
+  <script src="interface.js"></script>
+  <script src="src/animation.js"></script>
   <script src="src/thermostat.js"></script>
 </body>
 
