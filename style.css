@@ -15,6 +15,8 @@ main {
   background: url('./candle.jpg');
   background-size: cover;
   padding: 0rem 5rem;
+  text-align: center
+
 
 }
 .big-text {
@@ -69,6 +71,10 @@ main {
   display: inline-block;
 
 }
+
+
+
+
 
 /* this is for the color of the usage text. */
 .low-usage {
